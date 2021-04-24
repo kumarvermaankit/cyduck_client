@@ -357,7 +357,7 @@ if(val1.length<5){
 }
 
 if(val1===val2){
-    const r=await axios.post(`${url}/password/changepassword`,{email:params.email,password:val1})
+    const r=await axios.post(`${url}/password/changepassword`,{username:params.username,password:val1})
     console.log(r)
     if(r.data.data===true){
         Logout()

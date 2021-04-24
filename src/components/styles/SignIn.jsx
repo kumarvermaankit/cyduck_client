@@ -50,6 +50,8 @@ function OnChange(event,a){
 
 event.preventDefault()
 
+console.log(event.target.value,event.target.value.length)
+if(event.target.value !==undefined && event.target.value.length!==0){
 if(a===1){
     if(emails.includes(event.target.value)===true){
         setemailstate(true)
@@ -58,7 +60,7 @@ if(a===1){
         setemailstate(false)
     }
 }
-
+}
 const {name,value}=event.target;
 
 return( 
@@ -127,6 +129,7 @@ return(
   <div >
   <label ><h3 ><b>Email</b></h3></label>
     <input id="inputelement1" className="signinput" type="email" name="email" value={userP.email} onChange={(event)=>OnChange(event,1)} onFocus={()=>setemailstate(false)} required="true"  />
+    {console.log(emailstate)}
     {emailstate===true?<p className="checkpara1" >Alright</p>:emailstate===false?<p className="checkpara" >Email doesn't exist</p>:null}
   </div>
  

@@ -15,7 +15,7 @@ const responsesuccessGoogle= (response)=>{
 
 axios({
     method:"POST",
-    url:"http://localhost:5000/googlelogin",
+    url:"https://cyduck.herokuapp.com/googlelogin",
     data: {tokenId:response.tokenId}
 }).then(res=>{
     console.log(res)
