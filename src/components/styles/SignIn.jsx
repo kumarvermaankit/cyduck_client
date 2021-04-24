@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom"
 
 import { useAppContext } from "../lib/contextlib";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 
 import login from "../UserFunctions";
 import "../styles/Signin.scss"
