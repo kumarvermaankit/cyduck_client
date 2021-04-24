@@ -65,7 +65,7 @@ userHasAuthenticated(false);
 history.push("/signin");
 }
 
-const [rp,setrp]=useState(0);
+
 
 
 
@@ -124,7 +124,7 @@ if(decoded){
 
 
 
-},[])
+},[l])
 
 
 
@@ -332,7 +332,7 @@ var s=`/search/${str1}/${str2}/${str3}/${t}`
         options={languages}
         value={selected.languages}
         onChange={(value)=>dropValueGetter(value,1)}
-        labelledBy={"Select"}
+        labelledBy={"language"}
       />
       <span className="langtip">languages</span>
 <MultiSelect
@@ -340,7 +340,7 @@ var s=`/search/${str1}/${str2}/${str3}/${t}`
         options={fields}
         value={selected.fields}
         onChange={(value)=>dropValueGetter(value,2)}
-        labelledBy={"Select"}
+        labelledBy={"field"}
       />
       <span className="fieldtip">fields</span>
       <MultiSelect
@@ -348,7 +348,8 @@ var s=`/search/${str1}/${str2}/${str3}/${t}`
         options={languages}
         value={selected.frameworks}
         onChange={(value)=>dropValueGetter(value,3)}
-        labelledBy={"Select"}
+        labelledBy="frameworks"
+        
       />
       <span className="framtip">framworks</span>
         </form>

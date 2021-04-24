@@ -220,12 +220,15 @@ function Countdown(props){
   
     
 
-
-    const [checker,setchecker]=useState(false)  
     var time=Date.parse(props.time)
     var currenttime=Date.parse(new Date())
     
     const [secondspassed,setsp]=useState((((currenttime-time)/(1000))-17940))
+    
+
+ 
+
+
     
     
     useEffect(()=>{
@@ -245,18 +248,21 @@ function Countdown(props){
      
     
     async function extra(){
-        if(Number(Math.abs(Math.floor(secondspassed/(60*60)) % 24))<=0){
+       
             const r=await axios.post("https://cyduck.herokuapp.com/upload/autodelete",{document:props.d,index:props.idx})
             if(r){
-                axios.post("https://cyduck.herokuapp.com/upload/autoupdate")
-                window.location.reload()
-            setCD(false)
+                const r1=await axios.post("https://cyduck.herokuapp.com/upload/autoupdate")
+                if(r1){
+                    window.location.reload()
+                    setCD(false)
+                }
+            
             }
             
-        }
+     
     
     }
-      if(props.d!=="extra" && secondspassed>=3600){
+      if(props.d!=="extra" && (((Date.parse(new Date()))-time)/3600000)>=6){
         extra()
       }
     
@@ -265,15 +271,14 @@ function Countdown(props){
     
     
     
-  
-        
+
        
         return (
             <div className="community_timer">
               
 
 
-    {checker || props.d==="extra"?null:<ul className="CD">
+    {props.d==="extra"?null:<ul className="CD">
     
     
     
