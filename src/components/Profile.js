@@ -31,7 +31,7 @@ let params=useParams()
     decoded=jwt_decode(token)
   }
     
-    const{isAuthenticated,userHasAuthenticated}=useAppContext();
+    const{userHasAuthenticated}=useAppContext();
     const [pswlength,setpswlength]=useState(false)
     let history=useHistory()
     const [l,setl]=useState("")
@@ -88,7 +88,7 @@ const [sf,setsf]=useState(false)
     useEffect(()=>{
 
 
-        setl(window.location)
+     
         
 
           if(tkn!==null){
