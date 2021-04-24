@@ -454,7 +454,7 @@ event.preventDefault();
    
 
    
-setcomments(false)
+setcommentstate(false)
 
 comment.map((comment)=>{
     cmnt[comment._id]?
