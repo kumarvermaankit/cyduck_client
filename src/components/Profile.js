@@ -34,7 +34,7 @@ let params=useParams()
     const{userHasAuthenticated}=useAppContext();
     const [pswlength,setpswlength]=useState(false)
     let history=useHistory()
-    const [l,setl]=useState("")
+  
     const [file,setfile]=useState(null)
     const [psrc,setpsrc]=useState(null)
 
@@ -49,7 +49,7 @@ const [pswstate,setpswstate]=useState(false)
     const [ph,setph]=useState(false)
     const [clg,setclg]=useState(false)
     const [upi,setupi]=useState(false)
-    var tkn=localStorage.getItem('usertoken');
+ 
     const [myw,setmyw]=useState(false)
     const [rp,setrp]=useState(0)
     const [imgp,setimgp]=useState(0)
