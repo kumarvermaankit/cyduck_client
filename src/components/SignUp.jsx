@@ -137,12 +137,12 @@ return(
   <div >
   <label><h3><b>Email</b></h3></label>
       <input id="inputelement1" style={{height:"50px"}}  type="email" name="email" value={userP.email} onChange={(event)=>OnChange(event,1)} onFocus={()=>setemailstate(true)}  required="true" autoComplete="off" />
-    {emailstate?<p>Alright</p>:<p>Not available</p>}
+    {emailstate !==undefined?emailstate?<p className="checkpara1" style={{top:"30px",left:"42px"}} >Available</p>:<p className="checkpara" style={{top:"30px",left:"42px"}}>Not available</p>:null}
   </div>
   <div >
   <label><h3><b>Username</b></h3></label>
       <input id="inputelement2s" style={{height:"50px"}}  type="text" name="username" value={userP.username} onChange={(event)=>OnChange(event,2)} onFocus={()=>setuserstate(true)} required="true" autoComplete="off" />
-   
+      {userstate !==undefined?userstate?<p className="checkpara1" style={{top:"30px",left:"42px"}} >Available</p>:<p className="checkpara" style={{top:"30px",left:"42px"}}>Not available</p>:null}
   </div>
   <div >
   <label><h3><b>Password</b></h3></label>
