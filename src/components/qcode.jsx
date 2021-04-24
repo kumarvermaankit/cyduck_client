@@ -993,7 +993,7 @@ var currenttime=Date.parse(new Date())
    {tkn!==null?decoded.data.username===params.username?((currenttime-time)/1000<=900)?<Button  id="cardbtn" variant="primary"  style={{marginLeft:"100px",marginRight:"120px"}}  onClick={(event)=>Delete(event,props.doc_name,props.index,props.i)}><svg className="bts">
         <rect x="0" y="0" fill="none" width="100%" height="100%"/>
       </svg>Delete</Button>:null:null:null}
-   { comments[props.i]?<form onSubmit={(event)=>saveinput(props.doc_name,event,props.index,props.comments)}>
+   { commentstate?<form onSubmit={(event)=>saveinput(props.doc_name,event,props.index,props.comments)}>
     <input  type="text"  id="comment" />
     <button id="cardbtn" type="submit" style={{width:"50px",height:"50px",marginLeft:"10px"}} ><AddIcon  /></button>
     </form>:null}
