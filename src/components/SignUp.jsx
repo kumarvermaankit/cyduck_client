@@ -137,7 +137,7 @@ return(
   <div >
   <label><h3><b>Email</b></h3></label>
       <input id="inputelement1" style={{height:"50px"}}  type="email" name="email" value={userP.email} onChange={(event)=>OnChange(event,1)} onFocus={()=>setemailstate(true)}  required="true" autoComplete="off" />
-    
+    {emailstate?<p>Alright</p>:<p>Not available</p>}
   </div>
   <div >
   <label><h3><b>Username</b></h3></label>
