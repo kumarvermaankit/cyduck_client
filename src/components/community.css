@@ -10,11 +10,16 @@ body {
 
   background: linear-gradient(to left, rgba(3, 37, 31, 0.73),rgba(3, 22, 46, 0.52)),url(CSS11.png);
     background-size: 1540px;
-    
+    position: fixed; 
+     overflow-y: scroll;
   
   
 }
 
+
+a{
+    text-decoration: none;
+}
 
 
 .btn {
