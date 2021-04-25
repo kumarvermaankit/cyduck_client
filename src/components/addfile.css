@@ -19,6 +19,15 @@ body{
 }
 
 
+.loading{
+	width: 60px;
+	height: 60px;
+	position: relative;
+	left:600px;
+	bottom:150px;
+
+}
+
 
 
   .afdiv{

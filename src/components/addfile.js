@@ -13,8 +13,10 @@ import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 
 import storage from "./fire_base"
+import Hourglass from "./Hourglass.gif"
+import Spinner from "./Spinner-3.gif"
 
-
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 
 function File(){
   let history=useHistory();
@@ -36,6 +38,8 @@ function File(){
       paymentinfo:{}
     })
 
+
+    const [load,setload]=useState()
     const [questionimg,setquestionimg]=useState([])
 
     const [availablelinks,setavailablelinks]=useState({
@@ -436,13 +440,13 @@ function CreateImage(){
 async function razorPayPaymentHandler(money) {
 
  
-  
+  setload(true)
 
     const API_URL = `${url}/payment/`
     const orderUrl = `${API_URL}order/${money}`;
     const response = await Axios.get(orderUrl);
     const { data } = response;
-    console.log("App -> razorPayPaymentHandler -> data", data)
+    
     
     const options = {
       key: '',
@@ -457,9 +461,9 @@ async function razorPayPaymentHandler(money) {
          const successObj = JSON.parse(captureResponse.data)
          const captured = successObj.captured;
          
-         console.log("App -> razorPayPaymentHandler -> captured", successObj)
+         
          if(captured){
-             console.log('success')
+             setload(false)
              setquestion((prevvalue)=>{
                return{
                  ...prevvalue,
@@ -505,7 +509,7 @@ function Card(props){
 return (
     <div className="Pdiv">
      <div  className="carddiv" style={{marginLeft:"0"}}>
-       <button className="btn">Free</button>
+       <button className="btn" onClick={()=>setload(false)}>Free</button>
        <p id="free" className="idiv">Free! Free! Free!</p>
      </div>
   <Card  amount="3" state={two} hours="6"/>
@@ -694,7 +698,7 @@ function addlinks(event,a){
       
 
         <Razorpay />
-  
+      {load!==undefined?load?<img className="loading"  style={{backgroundColor:"transparent"}} src={Spinner}/>:<CheckCircleIcon style={{height:"60px",width:"60px"}} className="loading"/>:null}
         </section>:null}
 </div>
 
