@@ -492,75 +492,84 @@ async function Delete(event,document,index,id){
 }
 
 
-
 function Countdown(props){
+  
+    
 
-
-const [checker,setchecker]=useState(false)  
-var time=Date.parse(props.time)
-var currenttime=Date.parse(new Date())
-
-const [secondspassed,setsp]=useState((((currenttime-time)/(1000))-17940))
-
-
-useEffect(()=>{
-   
-  if(props.d!=="extra"){
-    setTimeout(()=>{
-        setsp(secondspassed+1)
-      
-
-        },1000)
-}
+  var time=Date.parse(props.time)
+  var currenttime=Date.parse(new Date())
+  
+  const [secondspassed,setsp]=useState((((currenttime-time)/(1000))-17940))
+  
+var c=0
 
 
   
+  
+  useEffect(()=>{
+     
+  
+  
+      if(props.d!=="extra"){
+          setTimeout(()=>{
+              setsp(secondspassed+1)
+            
+      
+              },1000)
+      }
+    
+  
+        
+   
+  
+  async function extra(){
+     if(c<=1){
 
+    
+          const r=await axios.post("https://cyduck.herokuapp.com/upload/autodelete",{document:props.d,index:props.idx})
+            
 
-async function extra(){
-if(Number(Math.abs(Math.floor(secondspassed/(60*60)) % 24))<=0){
-    const r=await axios.post("https://cyduck.herokuapp.com/upload/autodelete",{document:props.d,index:props.idx})
-    if(r){
-        axios.post("https://cyduck.herokuapp.com/upload/autoupdate")
-        window.location.reload()
-    setCD(false)
+          if(r.data.data===true){
+              window.location.reload()
+          }
+
+               }
+           }
+console.log((((Date.parse(new Date()))-time)/3600000))
+
+    if((((Date.parse(new Date()))-time)/3600000)>=6 && props.d!=="extra" ){
+      c=c+1
+      extra()
+      
     }
-    
-}
+  
+       
+  },[secondspassed])
+  
 
-}
-if(props.d!=="extra" && secondspassed>=3600){
-extra()
-}
-
-},[secondspassed])
-
-
+     
+      return (
+          <div className="community_timer">
+            
 
 
+  {props.d==="extra"?null:<ul className="CD">
+  
+  
+  
+  <li className="timer" >{Math.abs((Math.floor(secondspassed/(60*60)) % 24))<10?"0"+Number(Math.abs(Math.floor(secondspassed/(60*60)) % 24)):Number(Math.abs(Math.floor(secondspassed/(60*60)) % 24))}</li>
+  <li className="timer">{Math.abs(Math.floor(secondspassed/60) % 60)<10?"0"+Math.abs(Math.floor(secondspassed/60) % 60):Math.abs(Math.floor(secondspassed/60) % 60)}</li>
+  <li className="timer">{Math.abs(secondspassed % 60)<10?"0"+Number(Math.abs(secondspassed % 60)):Math.abs(secondspassed % 60)}</li>
 
-
-    
-   
-    return (
-        <div>
-          
-{checker || props.d==="extra"?null:<ul className="CD">
-
-
-
-<li className="timer" >{Math.abs((Math.floor(secondspassed/(60*60)) % 24))<10?"0"+Number(Math.abs(Math.floor(secondspassed/(60*60)) % 24)):Number(Math.abs(Math.floor(secondspassed/(60*60)) % 24))}</li>
-<li className="timer">{Math.abs(Math.floor(secondspassed/60) % 60)<10?"0"+Math.abs(Math.floor(secondspassed/60) % 60):Math.abs(Math.floor(secondspassed/60) % 60)}</li>
-<li className="timer">{Math.abs(secondspassed % 60)<10?"0"+Number(Math.abs(secondspassed % 60)):Math.abs(secondspassed % 60)}</li>
-
-             </ul>}
-        </div>
-    ) 
-   
-
-
-
-}
+               </ul>}
+          </div>
+      ) 
+     
+  
+  
+  
+  }
+  
 
 
 

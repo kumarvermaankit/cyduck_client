@@ -257,20 +257,11 @@ var c=0
                 window.location.reload()
             }
 
-        //     if(r){
-        //  const r1= await axios.post("https://cyduck.herokuapp.com/upload/autouserupdate",{username:r.data.username,id:r.data.id})
-        //             if(r1){
-        //                 window.location.reload()
-        //             }
-                       
-        //                 // setCD(false)
-                   
-        //         }
                  }
              }
-console.log((((Date.parse(new Date()))-time)/3600000))
 
-      if((((Date.parse(new Date()))-time)/3600000)>=0 && props.d!=="extra" ){
+
+      if((((Date.parse(new Date()))-time)/3600000)>=6 && props.d!=="extra" ){
         c=c+1
         extra()
         
