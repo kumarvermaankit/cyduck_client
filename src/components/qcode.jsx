@@ -948,7 +948,7 @@ var currenttime=Date.parse(new Date())
 <div className="bgrnd">
 
   <div className="importcard"  key={props.i} >
-       <div className="c_header"><Card.Link  onClick={()=>Showall(props.i)}><p style={{padding:"13px"}}><b>{props.t}</b></p>{(props.doc_name==="bronze")?<Card.Img  class="card_img"  src={one}/>:(props.doc_name==="silver")?<Card.Img class="card_img" src={five}/>:(props.doc_name==="gold")?<Card.Img  class="card_img" src={five}/>:(props.doc_name==="extra")?<Card.Img  class="card_img"  src={null}/>:null}</Card.Link><a  href={`/pro_file/${props.u}`} className="username">~{props.u}</a></div>
+       <div className="c_header"><a  onClick={()=>Showall(props.i)}><p style={{padding:"13px"}}><b>{props.t}</b></p>{(props.doc_name==="bronze")?<Card.Img  class="card_img"  src={one}/>:(props.doc_name==="silver")?<Card.Img class="card_img" src={five}/>:(props.doc_name==="gold")?<Card.Img  class="card_img" src={five}/>:(props.doc_name==="extra")?<Card.Img  class="card_img"  src={null}/>:null}</a><a  href={`/pro_file/${props.u}`} className="username">~{props.u}</a></div>
        <Card.Text className="questionid">id:{props.i}</Card.Text>
   <Card.Body>
  <p className="linkshowpara">Links:</p>
