@@ -81,28 +81,7 @@ function Setprofile(imgurl){
 
 
 useEffect(()=>{
- var val=document.getElementsByClassName("gray")
- console.log(val)
-var count=0
-for(var i=0;i<val.length;i++){
-  console.log(val[i].tagName)
-if(val[i].tagName==="SPAN"){
 
-
-
- if(count===0){
-    val[i].textContent="language"
-  }
-  else if(count===1){
-    val[i].textContent="field"
-  }
-  else if(count===2){
-val[i].textContent="framework"
-  }
-  count++
-}
-console.log(val[i].textContent)
-}
 
 setl(window.location)
 
@@ -127,7 +106,30 @@ if(decoded){
 },[l])
 
 
-
+useEffect(()=>{
+  var val=document.getElementsByClassName("gray")
+  console.log(val)
+ var count=0
+ for(var i=0;i<val.length;i++){
+   console.log(val[i].tagName)
+ if(val[i].tagName==="SPAN"){
+ 
+ 
+ 
+  if(count===0){
+     val[i].textContent="language"
+   }
+   else if(count===1){
+     val[i].textContent="field"
+   }
+   else if(count===2){
+ val[i].textContent="framework"
+   }
+   count++
+ }
+ console.log(val[i].textContent)
+ }
+},[])
 
 
 const languages=[

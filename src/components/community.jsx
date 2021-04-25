@@ -225,8 +225,7 @@ function Countdown(props){
     
     const [secondspassed,setsp]=useState((((currenttime-time)/(1000))-17940))
     
-
- 
+var c=0
 
 
     
@@ -248,30 +247,39 @@ function Countdown(props){
      
     
     async function extra(){
-       
+       if(c<=1){
+
+      
             const r=await axios.post("https://cyduck.herokuapp.com/upload/autodelete",{document:props.d,index:props.idx})
-            if(r){
-                const r1=await axios.post("https://cyduck.herokuapp.com/upload/autoupdate")
-                if(r1){
-                    window.location.reload()
-                    setCD(false)
-                }
-            
+              
+
+            if(r.data.data===true){
+                window.location.reload()
             }
-            
-     
-    
-    }
-      if(props.d!=="extra" && (((Date.parse(new Date()))-time)/3600000)>=6){
+
+        //     if(r){
+        //  const r1= await axios.post("https://cyduck.herokuapp.com/upload/autouserupdate",{username:r.data.username,id:r.data.id})
+        //             if(r1){
+        //                 window.location.reload()
+        //             }
+                       
+        //                 // setCD(false)
+                   
+        //         }
+                 }
+             }
+console.log((((Date.parse(new Date()))-time)/3600000))
+
+      if((((Date.parse(new Date()))-time)/3600000)>=0 && props.d!=="extra" ){
+        c=c+1
         extra()
+        
       }
     
          
     },[secondspassed])
     
-    
-    
-
+  
        
         return (
             <div className="community_timer">
