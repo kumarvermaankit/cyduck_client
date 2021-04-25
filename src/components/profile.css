@@ -240,6 +240,11 @@ option{
 }
 
 
+#username{
+    position: relative;
+    left:100px
+}
+
 .userpara{
     display: inline-block;
     position: relative;

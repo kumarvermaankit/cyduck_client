@@ -505,36 +505,37 @@ return(
 {info!=={}?showskill():null}
         
         </div>
+        {(decoded.data.username===params.username)?
+       <div>
+        <label className="l" for="email" style={{fontSize:"25px",top:"37px",left:"450px"}}>Email:</label>
+        <input className="inpt ip" id="email" type="email" placeholder="Email ID" value={decoded.data.email} readOnly={true} /></div>:null}
         <div style={{marginLeft:"310px"}}>
-        <label for="username" style={{fontSize:"25px"}}>Username:</label>
-        {userp?<input className="inpt" id="username" type="text" onChange={(event)=>User(event)} placeholder="enter username" />:<input className="inpt" id="username" type="text"  value={params.username} readOnly={true} />}
-        {userp?<button className="bt" onClick={(event)=>Change(event,1)}><CheckCircleIcon style={{width:"23px",height:"23px"}} /></button>:null}
-       { (decoded.data.username===params.username)? <button className="editbtn" style={{left:"10px",bottom:"7px"}} onClick={(event)=>Unstate(event,1)}><EditIcon style={{width:"23px",height:"23px",color:"black"}}/></button>:null}
+        <label for="username" className="l" style={{fontSize:"25px",left:"85px",top:"4px"}}>Username:</label>
+        {userp?<input className="inpt" id="username" type="text" onChange={(event)=>User(event)} placeholder="enter username" />:<input className="inpt" onFocus={(event)=>Unstate(event,1)}   id="username" type="text"  value={params.username} readOnly={true} />}
+        {userp?<button className="bt"  style={{left:"86px"}}  onClick={(event)=>Change(event,1)}><CheckCircleIcon style={{width:"23px",height:"23px"}} /></button>:null}
+       { (decoded.data.username===params.username)? <button className="editbtn"   style={{left:"115px",bottom:"7px"}} onClick={(event)=>Unstate(event,1)}><EditIcon style={{width:"23px",height:"23px",color:"black"}}/></button>:null}
         {userp?para===true||para===undefined?<p className="userpara" style={{color:"#29bb89"}}>available</p>:<p className="userpara" style={{color:"red"}}>Already Exists</p>:null}
         </div>
-       {(decoded.data.username===params.username)?
-       <div>
-        <label className="l" for="email" style={{fontSize:"25px",top:"45px",left:"360px"}}>Email:</label>
-        <input className="inpt ip" id="email" type="email" placeholder="Email ID" value={decoded.data.email} readOnly={true} /></div>:null}
+       
         {(decoded.data.username===params.username)?
         <div >
-        <label className="l" for="phone" style={{fontSize:"25px",left:"255px",top:"45px"}}>Phone Number:</label>
-        {ph?<input className="inpt ip" id="phone"  type="text" placeholder="Phone Number" />:<input className="inpt ip" id="phone"  type="text" value={info.phone} readOnly={true} />}
-        {ph?<button className="bt" style={{left:"660px",bottom:"83px"}} onClick={(event)=>Change(event,2)}><CheckCircleIcon style={{width:"23px",height:"23px"}} /></button>:null}
-       {(decoded.data.username===params.username)?<button className="editbtn" style={{left:"670px",bottom:"83px"}} onClick={(event)=>Unstate(event,2)} ><EditIcon style={{width:"23px",height:"23px",color:"black"}}/></button>:null}
+        <label className="l" for="phone" style={{fontSize:"25px",left:"345px",top:"37px"}}>Phone Number:</label>
+        {ph?<input className="inpt ip" id="phone"   type="text" placeholder="Phone Number" />:<input className="inpt ip" onFocus={(event)=>Unstate(event,2)} id="phone" on type="text" value={info.phone} readOnly={true} />}
+        {ph?<button className="bt" style={{left:"740px",bottom:"83px"}} onClick={(event)=>Change(event,2)}><CheckCircleIcon style={{width:"23px",height:"23px"}} /></button>:null}
+       {(decoded.data.username===params.username)?<button className="editbtn" style={{left:"770px",bottom:"83px"}} onClick={(event)=>Unstate(event,2)} ><EditIcon style={{width:"23px",height:"23px",color:"black"}}/></button>:null}
         </div>:null}
         <div>
-        <label className="l" for="college" style={{fontSize:"25px",left:"260px",top:"45px"}}>College Name:</label>
-        {clg?<input className="inpt ip" id="college" type="text" placeholder="College Name"   />:<input className="inpt ip" id="college" type="text" value={info.college}  readOnly={true} />}
-        {clg?<button className="bt" style={{left:"660px",bottom:"83px"}} onClick={(event)=>Change(event,3)}><CheckCircleIcon style={{width:"23px",height:"23px"}} /></button>:null}
-        {(decoded.data.username===params.username)?<button className="editbtn" style={{left:"670px",bottom:"83px"}} onClick={(event)=>Unstate(event,3)}><EditIcon style={{width:"23px",height:"23px",color:"black"}}/></button>:null}
+        <label className="l" for="college" style={{fontSize:"25px",left:"355px",top:"37px"}}>College Name:</label>
+        {clg?<input className="inpt ip"  id="college" type="text" placeholder="College Name"   />:<input className="inpt ip"  onClick={(event)=>Unstate(event,3)} id="college" type="text" value={info.college}  readOnly={true} />}
+        {clg?<button className="bt" style={{left:"740px",bottom:"83px"}} onClick={(event)=>Change(event,3)}><CheckCircleIcon style={{width:"23px",height:"23px"}} /></button>:null}
+        {(decoded.data.username===params.username)?<button className="editbtn" style={{left:"770px",bottom:"83px"}} onClick={(event)=>Unstate(event,3)}><EditIcon style={{width:"23px",height:"23px",color:"black"}}/></button>:null}
         </div>
         {(decoded.data.username===params.username)?
         <div>
-        <label className="l" for="upi" style={{fontSize:"25px",left:"335px",top:"45px"}}>UPI_ID:</label>
-        {upi?<input  className="inpt ip" type="text" id="upi" placeholder="Add your UPI ID" />:<input  className="inpt ip" type="text" id="upi" value={info.upi} readOnly={true} />}
-        {upi?<button className="bt" style={{left:"660px",bottom:"83px"}} onClick={(event)=>Change(event,4)}><CheckCircleIcon style={{width:"23px",height:"23px"}} /></button>:null}
-        <button className="editbtn" style={{left:"670px",bottom:"83px"}} onClick={(event)=>Unstate(event,4)}><EditIcon style={{width:"23px",height:"23px",color:"black"}}/></button>
+        <label className="l" for="upi" style={{fontSize:"25px",left:"435px",top:"37px"}}>UPI_ID:</label>
+        {upi?<input  className="inpt ip" type="text" id="upi" placeholder="Add your UPI ID" />:<input onFocus={(event)=>Unstate(event,4)} className="inpt ip" type="text" id="upi" value={info.upi} readOnly={true} />}
+        {upi?<button className="bt" style={{left:"740px",bottom:"83px"}} onClick={(event)=>Change(event,4)}><CheckCircleIcon style={{width:"23px",height:"23px"}} /></button>:null}
+        <button className="editbtn" style={{left:"770px",bottom:"83px"}} onClick={(event)=>Unstate(event,4)}><EditIcon style={{width:"23px",height:"23px",color:"black"}}/></button>
         </div>
         :null}
      
