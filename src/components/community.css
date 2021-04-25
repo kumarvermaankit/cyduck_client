@@ -12,6 +12,7 @@ body {
     background-size: 1540px;
     
      overflow-y: scroll;
+     overflow-x:scroll;
   
   
 }
