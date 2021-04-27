@@ -383,14 +383,14 @@ return(
 
 <Items />
 
-
+{console.log(no_of_questions)}
 
 
 <Pagination
 className="pages"
           activePage={activepage}
-          itemsCountPerPage={1}
-          totalItemsCount={(activepage+1)*(no_of_questions)}
+          itemsCountPerPage={5}
+          totalItemsCount={no_of_questions}
           pageRangeDisplayed={5}
           onChange={(pagenumber)=>handlePageChange(pagenumber)}
         />
