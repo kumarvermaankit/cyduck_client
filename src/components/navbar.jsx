@@ -32,12 +32,10 @@ if(tkn!==null){
   var decoded=jwt_decode(token)
 }
 
-const [file,setfile]=useState(null)
-const [pstate,setpstate]=useState(false)
+const [lpara,setlpara]=useState(true)
+const [fpara,setfpara]=useState(true)
+const [frpara,setfrpara]=useState(true)
 
-const [profile,setprofile]=useState(null)
-
-const [myw,setmyw]=useState(false)
 
 const [selected, setSelected] = useState({
   languages:[],
@@ -151,14 +149,14 @@ const languages=[
   ]
 
 
-function openwindow(){
-myw?setmyw(false):setmyw(true)
-}
+
 
 
 function dropValueGetter(value,a){
    
+  
   if(a===1){
+    setlpara(false)
       var arr1=[]
       setSelected((prevvalue)=>{
           return{
@@ -177,8 +175,11 @@ function dropValueGetter(value,a){
        }
    })
  
+
+
   }
   else if(a===2){
+    setfpara(false)
       var arr1=[]
   
       setSelected((prevvalue)=>{
@@ -200,6 +201,7 @@ arr1.push(each.value)
       
   }
   else if(a===3){
+    setfrpara(false)
       var arr1=[]
       setSelected((prevvalue)=>{
           return{
@@ -329,6 +331,7 @@ var s=`/search/${str1}/${str2}/${str3}/${t}`
 <form className="frm" onSubmit={Search}>
         <input id="search" className="searchInput" placeholder="Search by ID or string" />
         <button className="searchButton" type="submit"><SearchIcon /></button>
+        
 <MultiSelect
         className="drop_down lang"
         options={languages}
@@ -336,7 +339,8 @@ var s=`/search/${str1}/${str2}/${str3}/${t}`
         onChange={(value)=>dropValueGetter(value,1)}
         labelledBy={"language"}
       />
-      <span className="langtip">languages</span>
+     
+     
 <MultiSelect
         className="drop_down field"
         options={fields}
@@ -344,7 +348,7 @@ var s=`/search/${str1}/${str2}/${str3}/${t}`
         onChange={(value)=>dropValueGetter(value,2)}
         labelledBy={"field"}
       />
-      <span className="fieldtip">fields</span>
+      
       <MultiSelect
         className="drop_down fram"
         options={languages}
@@ -353,7 +357,7 @@ var s=`/search/${str1}/${str2}/${str3}/${t}`
         labelledBy="frameworks"
         
       />
-      <span className="framtip">framworks</span>
+     
         </form>
       
         { ((l.toString().substr((l.toString().length-("/file").length),("/file").length))!="/file" && (l.toString().substr((l.toString().length-("/file").length),("/file").length))!="/home")?
@@ -371,7 +375,13 @@ var s=`/search/${str1}/${str2}/${str3}/${t}`
     </Nav>
     
   </Navbar.Collapse>
+
+  {lpara || selected.languages.length===0?<p className="langpara">languages</p>:<p className="langpara" style={{visibility:"hidden"}}>languages</p>}
+     {fpara || selected.fields.length===0?<p className="fieldpara">fields</p>:<p className="fieldpara" style={{visibility:"hidden"}} >fields</p>}
+     {frpara || selected.frameworks.length===0?<p className="framepara">frameworks</p>:<p className="framepara" style={{visibility:"hidden"}}>frameworks</p>}
 </Navbar>
+
+ 
 </div>
 )
     
@@ -394,7 +404,7 @@ function BeforeLoginNav(){
         onChange={(value)=>dropValueGetter(value,1)}
         labelledBy={"Select"}
       />
-      <span className="langtip">languages</span>
+      <p className="langpara">languages</p>
 <MultiSelect
         className="drop_down field"
         options={fields}
@@ -433,8 +443,12 @@ function BeforeLoginNav(){
           
         </Nav>
         
+
       </Navbar.Collapse>
+
+
     </Navbar>
+ 
     </div>
   )
 }

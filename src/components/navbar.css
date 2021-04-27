@@ -89,6 +89,64 @@ height:70px;
 	left:1350px
 }
 
+.langpara{
+	display:inline;
+	position: relative;
+	z-index: 10;
+	font-size: 18px;
+	
+	background-color: white;
+
+right: 990px;
+top:8px;
+	font-weight: lighter;
+	color: gray;
+	
+}
+
+
+.framepara{
+	display:inline-block;
+	position: relative;
+	z-index: 10;
+	font-size: 18px;
+	
+	background-color: white;
+	right: 755px;
+	top:8px;
+	font-weight: lighter;
+	color: gray;
+}
+
+.fieldpara{
+	display:inline-block;
+	position: relative;
+	z-index: 10;
+	font-size: 18px;
+	min-width: 60px;
+	background-color: white;
+	right: 890px;
+	top:8px;
+	font-weight: lighter;
+	color: gray;
+}
+
+.langpara1{
+	display:inline;
+	position: relative;
+	z-index: 10;
+	font-size: 14px;
+	
+	background-color: white;
+	left: 307px;
+	bottom: 49px;
+	font-weight: lighter;
+	color: gray;
+	visibility: hidden;
+}
+
+
+
 .profiletip{
     visibility: hidden;
 	width: 60px;

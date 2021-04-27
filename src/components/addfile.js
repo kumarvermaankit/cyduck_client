@@ -51,6 +51,8 @@ function File(){
     })
 
 
+const [checkdesc,setcheckdesc]=useState(false)
+
     const [mstate,setmstate]=useState(false)
     const [selected, setSelected] = useState({
       languages:null,
@@ -233,7 +235,10 @@ setquestionimg(array)
    
      
   
- 
+ if(question.title===""){
+   setcheckdesc(true)
+   return;
+ }
 
       // const r=await axios.post(`${url}/upload`,data)
     
@@ -636,7 +641,7 @@ function addlinks(event,a){
         required={true}
       /></div>:null}
      
-{cstate?<CodeM   Change={OnChangetitle}  val={question.title} name="title" plh="Enter Question"  hght="60px" wdt="1450" />:null}  
+{cstate?<CodeM   Change={OnChangetitle}  val={question.title} name="title" plh="Enter Question"  hght="60px" wdt="1450" required={true} />:null}  
 {cstate?<CodeM   Change={OnChangecontent}  val={question.content} name="content" plh="Enter or Copy Code" hght="400px" wdt="1450" />:null} 
 
 </div>
@@ -690,6 +695,7 @@ function addlinks(event,a){
      :null}
   
  </div>
+
  </form>
 
  <div className="headcard">
@@ -713,12 +719,12 @@ function addlinks(event,a){
      
 
    
-         
-            <button onClick={send} className="send-button" >POST</button>
+<button onClick={send}  className="send-button" >POST</button>
+           
             </div>
          :null}
      
-         
+        {checkdesc?<p style={{color:"red"}}>First Add description</p>:null} 
         </div>
        
        

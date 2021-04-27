@@ -22,6 +22,13 @@ a{
     text-decoration: none;
 }
 
+.contain{
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    
+}
+
 
 .btn {
     width: 200px;
@@ -72,8 +79,8 @@ a{
     display: inline-block;
     position: static;
     margin-left: 25px;
-    margin-top: 20px;
-
+    margin-top: 10px;
+   
   
     transition: 0.4s ease-in-out;
 
@@ -303,6 +310,8 @@ rect:hover {
         width: auto;
         height: auto;
         background-color: #000000;
+        position: relative;
+        bottom: 50px;
      
     }
 
@@ -530,13 +539,14 @@ rect:hover {
     position: relative;
     bottom: 30px;
     left: 176px;
-    
+    font-size: 11px;
 
 }
 
 .dropdown-container{
-    height: 43.8px;
-    width: 140px;
+    width: 170px;
+    height: 40.8px;
+    
 }
 
 .setedit{

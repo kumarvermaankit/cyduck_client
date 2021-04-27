@@ -91,12 +91,14 @@ img{
     width: 1450px;
     background-color: rgba(29, 131, 115, 0.73);
     font-size: 20px;
-  
+  position: relative;
     margin: 10px;
     border-radius: 8px;
     color: #000000;
-     margin-left: 45px;
+     margin-left: 35px;
     transform: scale(1.02);
+	
+	
 }
 
 .input-file-container{

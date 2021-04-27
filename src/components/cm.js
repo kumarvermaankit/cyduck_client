@@ -32,6 +32,7 @@ mode="javascript"
    style={{width:`${props.wdt}`, margin:"30px", zIndex:"5" ,height:`${props.hght}`,background:"rgba(3, 22, 46, 0.52)",color:"white",visibility:`${props.visible}`}}
    readOnly={props.read}
   autofocus="autofocus"
+  
   />
 
 
