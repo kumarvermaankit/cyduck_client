@@ -376,9 +376,9 @@ var s=`/search/${str1}/${str2}/${str3}/${t}`
     
   </Navbar.Collapse>
 
-  {lpara || selected.languages.length===0?<p className="langpara">languages</p>:<p className="langpara" style={{visibility:"hidden"}}>languages</p>}
-     {fpara || selected.fields.length===0?<p className="fieldpara">fields</p>:<p className="fieldpara" style={{visibility:"hidden"}} >fields</p>}
-     {frpara || selected.frameworks.length===0?<p className="framepara">frameworks</p>:<p className="framepara" style={{visibility:"hidden"}}>frameworks</p>}
+  {lpara || selected.languages.length===0?<p className="langpara">languages</p>:<p className="langpara1" >languages</p>}
+     {fpara || selected.fields.length===0?<p className="fieldpara">fields</p>:<p className="fieldpara1" >fields</p>}
+     {frpara || selected.frameworks.length===0?<p className="framepara">frameworks</p>:<p className="framepara1" >frameworks</p>}
 </Navbar>
 
  
