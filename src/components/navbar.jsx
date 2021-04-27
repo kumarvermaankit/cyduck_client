@@ -314,7 +314,7 @@ var s=`/search/${str1}/${str2}/${str3}/${t}`
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
     <li><a className="dropdown-item" href={`/pro_file/${decoded.data.username}`}>Profile</a></li>
-    <li><a className="dropdown-item" onClick={Logout} >Logout<ExitToAppIcon style={{height:"25px",width:"25px"}} /></a></li>
+    <li><a className="dropdown-item" style={{cursor:"pointer"}} onClick={Logout} >Logout<ExitToAppIcon style={{height:"25px",width:"25px"}} /></a></li>
     <li><a className="dropdown-item" href={`/myq`}>My Questions</a></li>
   </ul>
 </div>
