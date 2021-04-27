@@ -360,7 +360,7 @@ var s=`/search/${str1}/${str2}/${str3}/${t}`
     <a className="navitem" style={{left:"70px"}}  href="/file" >Ask Question</a>
      :null}
 
-  {l!="http://localhost:3000/community" && l!="http://localhost:3000/home"? <Nav.Link  href="/community" className="navlog" ><h3 className="navitem" style={{left:"20px"}}><b>Community</b></h3></Nav.Link>:null}
+  { (l.toString().substr((l.toString().length-("/community").length),("/community").length))!="/community" && (l.toString().substr((l.toString().length-("/home").length),("/home").length))!="/home"? <Nav.Link  href="/community" className="navlog" ><h3 className="navitem" style={{left:"20px"}}><b>Community</b></h3></Nav.Link>:null}
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
