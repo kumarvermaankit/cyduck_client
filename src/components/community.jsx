@@ -91,7 +91,7 @@ useEffect(()=>{
 
 
   
-  
+  var l=window.location;
     
 
  
@@ -127,7 +127,7 @@ async function NonHelper(){
      setno_of_questions(res.data.no_of_questions)
 }
   
-if((window.location)=="http://localhost:3000/myq"){
+if(((l.toString().substr((l.toString().length-("/myq").length),("/myq").length))=="/myq")){
 Helper()
 }
 else{
@@ -143,56 +143,59 @@ NonHelper()
 },[rp])
 
 
-async function Support(){
+// async function Support(){
      
-setarr([])
+// setarr([])
   
 
-async function Helper(){
-  const result=await axios.get(`${props.url1}`)
+// async function Helper(){
+//   const result=await axios.get(`${props.url1}`)
 
 
-  for(var i=0;i<result.data.questions.length;i++){
-      if(i===(result.data.questions.length-1)){
-          str=str+`${result.data.questions[i].index_no}`+`docname${result.data.questions[i].docname}`
+//   for(var i=0;i<result.data.questions.length;i++){
+//       if(i===(result.data.questions.length-1)){
+//           str=str+`${result.data.questions[i].index_no}`+`docname${result.data.questions[i].docname}`
       
-      }
-      else{
-      str=str+`${result.data.questions[i].index_no}`+`docname${result.data.questions[i].docname}`+","
+//       }
+//       else{
+//       str=str+`${result.data.questions[i].index_no}`+`docname${result.data.questions[i].docname}`+","
       
 
-  } 
-    }
+//   } 
+//     }
   
 
-const res= await axios.get(`${props.url}${str}`);
-if(res.data.arr.length===0){
-   window.location.reload()
-}
-  setarr(res.data.arr)
-  setactivepage(res.data.pagenumber)
-  setno_of_questions(res.data.no_of_questions)
+// const res= await axios.get(`${props.url}${str}`);
 
-}
+// console.log(res)
+
+// if(res.data.arr.length===0){
+//    window.location.reload()
+// }
+//   setarr(res.data.arr)
+//   setactivepage(res.data.pagenumber)
+//   setno_of_questions(res.data.no_of_questions)
+
+// }
 
 
-async function NonHelper(){
-  const res= await axios.get(`${props.url}`);
-  setarr(res.data.arr)
-   setactivepage(res.data.pagenumber)
-   setno_of_questions(res.data.no_of_questions)
-}
+// async function NonHelper(){
+//   const res= await axios.get(`${props.url}`);
+//   setarr(res.data.arr)
+//    setactivepage(res.data.pagenumber)
+//    setno_of_questions(res.data.no_of_questions)
+// }
 
-if((window.location)=="http://localhost:3000/myq"){
-Helper()
-}
-else{
+// if(((l.toString().substr((l.toString().length-("/myq").length),("/myq").length))!="/myq")){
+// Helper()
+// }
+// else{
   
-NonHelper()
-}
+// NonHelper()
+// }
 
 
-}     
+// }     
 
 
 
