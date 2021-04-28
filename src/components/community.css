@@ -494,16 +494,16 @@ rect:hover {
     border: double;
     border-right: none;
     border-bottom: none;
+    overflow-x:hidden;
 }
 
 .searchInput:focus {
-    width: 150px;
+    width: 107px;
    
     border-bottom: none;
 
 
 }
-
 
 
 
@@ -544,7 +544,7 @@ rect:hover {
 }
 
 .dropdown-container{
-    width: 170px;
+    width: 140px;
     height: 40.8px;
     
 }

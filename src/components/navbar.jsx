@@ -36,6 +36,7 @@ const [lpara,setlpara]=useState(true)
 const [fpara,setfpara]=useState(true)
 const [frpara,setfrpara]=useState(true)
 
+const [sfocus,setsfocus]=useState(false)
 
 const [selected, setSelected] = useState({
   languages:[],
@@ -295,7 +296,14 @@ var s=`/search/${str1}/${str2}/${str3}/${t}`
 
   
 
+function searchfocus(event){
 
+
+event.preventDefault()
+
+// document.getElementById("langpara").style.transform="translate(20px,0)"
+// document.getElementById("langpara").style.transition="0.05s all ease-in-out"
+}
 
 
 
@@ -329,7 +337,7 @@ var s=`/search/${str1}/${str2}/${str3}/${t}`
 
    
 <form className="frm" onSubmit={Search}>
-        <input id="search" className="searchInput" placeholder="Search by ID or string" />
+        <input id="search" className="searchInput" onMouseUp={(event)=>searchfocus(event)} placeholder="Search by ID or string" />
         <button className="searchButton" type="submit"><SearchIcon /></button>
         
 <MultiSelect
@@ -338,6 +346,7 @@ var s=`/search/${str1}/${str2}/${str3}/${t}`
         value={selected.languages}
         onChange={(value)=>dropValueGetter(value,1)}
         labelledBy={"language"}
+       
       />
      
      
@@ -376,9 +385,11 @@ var s=`/search/${str1}/${str2}/${str3}/${t}`
     
   </Navbar.Collapse>
 
-  {lpara || selected.languages.length===0?<p className="langpara">languages</p>:<p className="langpara1" >languages</p>}
+  {lpara || selected.languages.length===0?<p id="langpara" className="langpara">languages</p>:<p className="langpara1" >languages</p>}
      {fpara || selected.fields.length===0?<p className="fieldpara">fields</p>:<p className="fieldpara1" >fields</p>}
      {frpara || selected.frameworks.length===0?<p className="framepara">frameworks</p>:<p className="framepara1" >frameworks</p>}
+
+
 </Navbar>
 
  
