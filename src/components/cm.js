@@ -4,7 +4,8 @@
 import AceEditor from "react-ace";
  
 
-
+import 'brace/mode/javascript';
+import 'brace/theme/ambiance';
 
 
 
@@ -21,7 +22,8 @@ function CodeM(props){
     <div>
 
 <AceEditor
-mode="javascript" 
+mode="javascript"
+theme="ambiance"
 
     
     onChange={props.Change}
