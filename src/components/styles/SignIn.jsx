@@ -147,7 +147,7 @@ return(
 <div>
 
 <div className="line">
-<p className="or">OR</p>
+
 </div>
 
 

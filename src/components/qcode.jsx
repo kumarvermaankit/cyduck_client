@@ -982,15 +982,22 @@ var currenttime=Date.parse(new Date())
     </div>
     :null
     }
-    <Button id="cardbtn"  variant="primary" style={{marginRight:"100px"}}onClick={()=>Ansstate(props.a,props.u)}><svg className="bts">
+    {statearr?<Button id="cardbtn"  variant="primary" style={{marginRight:"100px"}}onClick={()=>Ansstate(props.a,props.u)}><svg className="bts">
         <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-      </svg>See Answers</Button>
+      </svg>Hide Answers</Button>:<Button id="cardbtn"  variant="primary" style={{marginRight:"100px"}}onClick={()=>Ansstate(props.a,props.u)}><svg className="bts">
+        <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+      </svg>See Answers</Button>}
     {tkn!==null?<div className="afterloginbuttons">
    <Button  id="cardbtn"  variant="primary" style={{marginRight:"80px"}} onClick={()=>AddAnswers()}><svg className="bts">
         <rect x="0" y="0" fill="none" width="100%" height="100%"/>
       </svg>Add Answer</Button>
 
-    </div>:null}
+    </div>:<div className="afterloginbuttons">
+   <Button  id="cardbtn"  variant="primary" style={{marginRight:"80px"}} onClick={()=>history.push("/signin")}><svg className="bts">
+        <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+      </svg>Add Answer</Button>
+
+    </div>}
     
     <Button  id="cardbtn"  variant="primary" style={{marginLeft:"100px" ,marginRight:"100px"}}  onClick={()=>Showimage(props.i)}><svg className="bts">
         <rect x="0" y="0" fill="none" width="100%" height="100%"/>
@@ -1002,10 +1009,10 @@ var currenttime=Date.parse(new Date())
    {tkn!==null?decoded.data.username===params.username?((currenttime-time)/1000<=900)?<Button  id="cardbtn" variant="primary"  style={{marginLeft:"100px",marginRight:"120px"}}  onClick={(event)=>Delete(event,props.doc_name,props.index,props.i)}><svg className="bts">
         <rect x="0" y="0" fill="none" width="100%" height="100%"/>
       </svg>Delete</Button>:null:null:null}
-   { commentstate?<form onSubmit={(event)=>saveinput(props.doc_name,event,props.index,props.comments)}>
+   { tkn!==null?commentstate?<form onSubmit={(event)=>saveinput(props.doc_name,event,props.index,props.comments)}>
     <input  type="text"  id="comment" />
-    <button id="cardbtn" type="submit" style={{width:"50px",height:"50px",marginLeft:"10px"}} ><AddIcon  /></button>
-    </form>:null}
+    <button id="cardbtn" type="submit" style={{width:"50px",height:"50px",marginLeft:"10px",bottom:"5px",position:"relative"}} ><AddIcon  /></button>
+    </form>:null:null}
     
      
     

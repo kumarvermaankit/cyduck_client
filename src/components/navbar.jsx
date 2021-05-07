@@ -457,7 +457,9 @@ function BeforeLoginNav(){
 
       </Navbar.Collapse>
 
-
+      {lpara || selected.languages.length===0?<p id="langpara" style={{right:"1142px"}} className="langpara">languages</p>:<p className="langpara1" >languages</p>}
+     {fpara || selected.fields.length===0?<p className="fieldpara "  style={{right:"981px"}}>fields</p>:<p className="fieldpara1" >fields</p>}
+     {frpara || selected.frameworks.length===0?<p className="framepara"  style={{right:"826px"}} >frameworks</p>:<p className="framepara1" >frameworks</p>}
     </Navbar>
  
     </div>

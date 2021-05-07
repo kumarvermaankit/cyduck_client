@@ -265,7 +265,7 @@ top:21px;
 	width:auto;
 	margin: 20px;
 	position: relative;
-	left: 70px;
+	left: 50px;
 	
 	padding: 5.5px;
     padding-top:5px;
@@ -274,6 +274,7 @@ top:21px;
     font-size:15px;
     color:yellow;
     text-align: center;
+	
 }
 .navitem:hover{
 	color: yellow;

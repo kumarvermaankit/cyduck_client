@@ -157,7 +157,7 @@ return(
   </div>
     </form>
     <div className="line1">
-<p className="or1">OR</p>
+
 </div>
 </div>
 

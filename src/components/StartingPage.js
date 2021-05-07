@@ -49,7 +49,7 @@ function gotosign(event){
             <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum laboriosam sunt cupiditatesit amet consectetur adipisicing elit. Harum laboriosam sunt cupiditatesit amet consectetur adipisicing elit. Harum laboriosam sunt cupiditate </h4>
             <form action=""  method="get">
             {tkn===null?<a className="strlinks" href="/signin"  >Get Started</a>:null}
-           {tkn!==null?<a  className="strlinks" style={{paddingLeft:"13px"}} href="/community">Answer a Question</a>:<a  className="strlinks2" href="/community">Answer a Question</a>}
+           {tkn!==null?<a  className="strlinks" style={{paddingLeft:"13px"}} href="/community">Answer a Question</a>:<a  className="strlinks2" style={{paddingTop:"24px",paddingLeft:"10px"}} href="/community">Answer a Question</a>}
             
             </form>
             
