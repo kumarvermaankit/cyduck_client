@@ -8,7 +8,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import axios from "axios";
 import MultiSelect from "react-multi-select-component";
 import SearchIcon from '@material-ui/icons/Search';
-
+import FilterListIcon from '@material-ui/icons/FilterList';
 
 
 
@@ -366,11 +366,11 @@ event.preventDefault()
         labelledBy="frameworks"
         
       />
-     
+     <button className="filter_btn" type="submit">Filter<FilterListIcon /></button>
         </form>
       
         { ((l.toString().substr((l.toString().length-("/file").length),("/file").length))!="/file" && (l.toString().substr((l.toString().length-("/file").length),("/file").length))!="/home")?
-    <a className="navitem" style={{left:"70px"}}  href="/file" >Ask Question</a>
+    <a className="navitem" style={{left:"50px"}}  href="/file" >Ask Question</a>
      :null}
 
   { (l.toString().substr((l.toString().length-("/community").length),("/community").length))!="/community" && (l.toString().substr((l.toString().length-("/home").length),("/home").length))!="/home"? <Nav.Link  href="/community" className="navlog" ><h3 className="navitem" style={{left:"20px"}}><b>Community</b></h3></Nav.Link>:null}
@@ -434,7 +434,7 @@ function BeforeLoginNav(){
       <span className="framtip">framworks</span>
         </form>
       
-      { ( (l.toString().substr((l.toString().length-("/signin").length),("/signin").length))!="/signin" &&  (l.toString().substr((l.toString().length-("/signup").length),("/signup").length))!="/signup" && (l.toString().substr((l.toString().length-("/home").length),("/home").length))!="/home" )?
+      { ( (l.toString().substr((l.toString().length-("/signin").length),("/signin").length))!="/signin" &&  (l.toString().substr((l.toString().length-("/signup").length),("/signup").length))!="/signup"  )?
    <div>
     <a  className="navitem " href="/signin">Signin</a>
     <a  className="navitem " href="signup">Signup</a>
@@ -443,7 +443,7 @@ function BeforeLoginNav(){
     
    
        
-      {(l.toString().substr((l.toString().length-("/community").length),("/community").length))!="/community" && l!="http://localhost:3000/home"? <Nav.Link  href="/community" className="navlog" ><h3 className="navitem" style={{left:"20px"}}><b>Community</b></h3></Nav.Link>:null}
+      {(l.toString().substr((l.toString().length-("/community").length),("/community").length))!="/community" && (l.toString().substr((l.toString().length-("/home").length),("/home").length))!="/home"? <Nav.Link  href="/community" className="navlog" ><h3 className="navitem" style={{left:"20px"}}><b>Community</b></h3></Nav.Link>:null}
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">

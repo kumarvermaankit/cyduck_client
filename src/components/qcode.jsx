@@ -924,7 +924,7 @@ event.preventDefault();
 const r=await axios.post(`${url}/upload/codeeditor`,{document:params.document,index:params.index,content:givencode})
 
 if(r){
-  setcodestate(false)
+
   seteditcode(false)
 }
 
@@ -968,9 +968,9 @@ var currenttime=Date.parse(new Date())
     
    
  
-    <Card.Text style={{paddingTop:"0px",cursor:"pointer"}} className="code-secn" onClick={()=>Showcode(props.i)} >
-     Code:
-     </Card.Text>
+    <button style={{paddingTop:"0px",cursor:"pointer",backgroundColor:"transparent",color:"black"}} className="code-secn" onClick={()=>Showcode(props.i)} >
+     Code
+     </button>
     
     {codestate===true?
     <div className="codediv">

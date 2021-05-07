@@ -8,12 +8,12 @@ import MultiSelect from "react-multi-select-component";
 import {useHistory} from "react-router-dom";
 import AddIcon from '@material-ui/icons/Add';
 import CodeM from "./cm"
-
+import AlertBox from "./alertbox"
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
-import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 
+import RemoveIcon from '@material-ui/icons/Remove';
 import storage from "./fire_base"
-import Hourglass from "./Hourglass.gif"
+
 import Spinner from "./Spinner-3.gif"
 
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
@@ -50,9 +50,9 @@ function File(){
       other:null
     })
 
+const [imguploadstate,setimguploadstate]=useState(true)
 
-const [checkdesc,setcheckdesc]=useState(false)
-
+const [alertbox,setalertbox]=useState(false)
     const [mstate,setmstate]=useState(false)
     const [selected, setSelected] = useState({
       languages:null,
@@ -223,7 +223,7 @@ files.unshift()
 
 setFile([])
 setquestionimg(array)
-
+setimguploadstate(false)
 }
 
  
@@ -236,7 +236,9 @@ setquestionimg(array)
      
   
  if(question.title===""){
-   setcheckdesc(true)
+  
+ setalertbox(true)
+ 
    return;
  }
 
@@ -334,7 +336,7 @@ function SelectFile(props){
   <div className="input-file-container"> 
 
 
-      <label  htmlFor={props.i} className="custom-file-upload"><AddAPhotoIcon style={{width:"40px",height:"70px",color:"white"}}/></label>
+      <label  htmlFor={props.i} className="custom-file-upload">Select</label>
       <input  
         type="file"
         id={props.i}
@@ -386,7 +388,7 @@ else{
 
 }
 
-console.log(files)
+
 
 function CreateImage(){
 
@@ -408,7 +410,7 @@ function CreateImage(){
     
     
   <button className="close_btn" style={{background:"none"}} onClick={(event)=>close(event,each)}><HighlightOffIcon /></button>
-      <img className="addimg" style={{color:"white"}} id={`myimage${each}`} alt="no-image"/>
+      <img className="addimg"  style={{color:"white"}} id={`myimage${each}`} />
   
     
       </div>
@@ -425,7 +427,11 @@ function CreateImage(){
   
 }
 
+function alertclick(event){
+  event.preventDefault()
 
+  setalertbox(false)
+}
 
  function Razorpay(){
 
@@ -492,7 +498,7 @@ async function razorPayPaymentHandler(money) {
   }
 
 
-  
+
 
 
 function Card(props){
@@ -600,10 +606,10 @@ function addlinks(event,a){
     
      
       <div className="maincard" id="maincard">
-      
+      {alertbox?<AlertBox message="First Add Description" click={(event)=>alertclick(event)} />:null}
       <p onClick={(event)=>mainstate(event)}  style={{color:"black",textAlign:"center",marginTop:"20px",cursor:"pointer",fontSize:"60px"}}>Post your Question here</p>
        
-
+  
        {mstate? 
          <div className="inputdiv">
     <form action="#">
@@ -611,8 +617,8 @@ function addlinks(event,a){
     <div className="headcard">
     <div style={{display:"flex"}}>
   
-     <p className="add" >Add Code</p>
-     <button className="acCode" onClick={(event)=>GoToCode(event)}><AddIcon style={{width:"35px",height:"35px",border:"none"}} /></button> 
+     <p className="add" >Code</p>
+   {cstate?<button className="acCode" onClick={(event)=>GoToCode(event)}><RemoveIcon style={{width:"35px",height:"35px",border:"none"}} /></button>:<button className="acCode" onClick={(event)=>GoToCode(event)}><AddIcon style={{width:"35px",height:"35px",border:"none"}} /></button> }
      </div>
 {cstate?
 <label for="keyword">Keywords</label>:null}
@@ -649,8 +655,8 @@ function addlinks(event,a){
      
  <div className="headcard">
 <div style={{display:"flex"}}>
-     <p className="add"  >Add Images</p>
-     <button className="AC"  onClick={(event)=>Imagestate(event)}><AddIcon style={{width:"35px",height:"35px",border:"none"}} /></button> 
+     <p className="add"  >Images</p>
+     {imgstate?<button className="AC"  onClick={(event)=>Imagestate(event)}><RemoveIcon style={{width:"35px",height:"35px",border:"none"}} /></button>:<button className="AC"  onClick={(event)=>Imagestate(event)}><AddIcon style={{width:"35px",height:"35px",border:"none"}} /></button> }
      </div>
      {imgstate?
        <div style={{display:"flex"}}>
@@ -662,12 +668,13 @@ function addlinks(event,a){
 
 :null}
 {imgstate?CreateImage():null}
-{imgstate?<button onClick={(event)=>Imageupload(event)}>Upload</button>:null}
+{imgstate?(noi.length!==0)?<button className="upload_btn" onClick={(event)=>Imageupload(event)}>Upload</button>:null:null}
+{imgstate?(noi.length!==0)?imguploadstate?<p className="upload_btn">Not Uploaded</p>:<CheckCircleIcon style={{height:"60px",width:"60px"}} className="image_upload" />:null:null}
  </div>
  <div className="headcard">
    <div style={{display:"flex"}}>
-   <p className="add"  >Add Links</p>
-     <button className="AC" style={{left:"20px"}} onClick={(event)=>Lstate(event)}><AddIcon style={{width:"35px",height:"35px",border:"none"}} /></button> 
+   <p className="add"  >Links</p>
+   {linkstate?<button className="AC" style={{left:"20px"}} onClick={(event)=>Lstate(event)}><RemoveIcon style={{width:"35px",height:"35px",border:"none"}} /></button>:<button className="AC" style={{left:"20px"}} onClick={(event)=>Lstate(event)}><AddIcon style={{width:"35px",height:"35px",border:"none"}} /></button> }
    </div>
 {linkstate?
 <div>
@@ -724,7 +731,7 @@ function addlinks(event,a){
             </div>
          :null}
      
-        {checkdesc?<p style={{color:"red"}}>First Add description</p>:null} 
+        
         </div>
        
        

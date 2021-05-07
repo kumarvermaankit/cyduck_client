@@ -133,6 +133,7 @@ z-index: 1;
 
 .links{
 margin:10px;
+
 }
 
 
@@ -228,6 +229,9 @@ rect:hover {
     position: relative;
     margin-left: 0px;
     font-size: 30px;
+    left: 3px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .codediv {
@@ -482,7 +486,7 @@ rect:hover {
 .searchInput {
 
     height: 44px;
-    width: 100px;
+    width: 83px;
     background-color: white;
     font-size: 10px;
     display: inline-block;
@@ -495,10 +499,11 @@ rect:hover {
     border-right: none;
     border-bottom: none;
     overflow-x:hidden;
+    
 }
 
 .searchInput:focus {
-    width: 107px;
+    width: 95px;
    
     border-bottom: none;
 
@@ -523,6 +528,7 @@ rect:hover {
     border: double;
     border-bottom: none;
     border-left: none;
+    margin-right: 20px;
 }
 
 
@@ -546,9 +552,12 @@ rect:hover {
 .dropdown-container{
     width: 140px;
     height: 40.8px;
-    
+    background-color: #2ec1ac;
 }
 
+#nav_bar span.gray{
+    visibility: hidden;
+}
 .setedit{
 
 margin-left: 10px;

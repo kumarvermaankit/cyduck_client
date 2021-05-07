@@ -37,7 +37,11 @@ height:70px;
 
 
 
-
+.filter_btn{
+	position: relative;
+	left: 180px;
+	bottom: 27px;
+}
 
 .profile{
     width: 50px;
@@ -97,12 +101,12 @@ height:70px;
 	
 	background-color: white;
 
-right: 1129px;
+right: 1170px;
 top:21px;
 	font-weight: lighter;
 	color: gray;
-	padding-left: 10px;
-	width: 100px;
+	padding-left: 1px;
+	width: 50px;
 }
 
 
@@ -113,12 +117,12 @@ top:21px;
 	font-size: 18px;
 	
 	background-color: white;
-	right: 812px;
+	right: 854px;
 	top:21px;
 	font-weight: lighter;
 	color: gray;
-	padding-left: 10px;
-	width: 100px;
+	padding-left: 1px;
+	width: 50px;
 }
 
 .fieldpara{
@@ -128,12 +132,12 @@ top:21px;
 	font-size: 18px;
 	
 	background-color: white;
-	right: 969px;
+	right: 1009px;
 	top:21px;
 	font-weight: lighter;
 	color: gray;
-	padding-left: 10px;
-	width: 100px;
+	padding-left: 1px;
+	width: 50px;
 }
 
 .langpara1{
@@ -261,7 +265,7 @@ top:21px;
 	width:auto;
 	margin: 20px;
 	position: relative;
-	left: 90px;
+	left: 70px;
 	
 	padding: 5.5px;
     padding-top:5px;
