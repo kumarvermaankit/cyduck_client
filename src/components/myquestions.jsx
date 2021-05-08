@@ -16,7 +16,7 @@ function MyQuestions(){
     return(
         <div>
         
-        <Community url={`https://cyduck.herokuapp.com/upload/myquestions`} url1={`https://cyduck.herokuapp.com/upload/mq/${decoded.data.username}`} />
+        <Community url={`https://cyduck.herokuapp.com/upload/myquestions/${decoded.data.username}`} url1={`https://cyduck.herokuapp.com/upload/mq/${decoded.data.username}`} />
         </div>
     )
 }

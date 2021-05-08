@@ -83,15 +83,17 @@ async function handlePageChange(pageNumber) {
 
 
 useEffect(()=>{
-
+    var l=window.location;
  
+    if(((l.toString().substr((l.toString().length-("/myq").length),("/myq").length))!=="/myq")){
+        startTimer()
+    }
     
-    startTimer()
 
 
 
   
-  var l=window.location;
+
     
 
  
@@ -101,7 +103,7 @@ setarr([])
   async function Helper(){
     const result=await axios.get(`${props.url1}`)
 
-  
+  console.log(result)
 
 
  if(result){
@@ -110,7 +112,7 @@ setarr([])
         window.location.reload()
     }
 
-
+console.log(res)
        setarr(res.data.arr)
        setactivepage(res.data.pagenumber)
        setno_of_questions(res.data.no_of_questions)
