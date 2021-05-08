@@ -108,7 +108,8 @@ setarr([])
 
  if(result){
     const res= await axios.get(`${props.url}`);
-    if(res.data.arr.length===0 || res.data.arr.info===null){
+    
+    if(res.data.arr.length===0 || res.data.arr.info===null || res.data.arr===[] ){
         window.location.reload()
     }
 
