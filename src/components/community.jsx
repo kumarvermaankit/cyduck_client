@@ -108,12 +108,12 @@ setarr([])
 
 //  if(result){
     const res= await axios.get(`${props.url}`);
-    
+    console.log(res)
     if(res.data.arr.length===0 || res.data.arr.info===null || res.data.arr===[] ){
         window.location.reload()
     }
 
-console.log(res)
+
        setarr(res.data.arr)
        setactivepage(res.data.pagenumber)
        setno_of_questions(res.data.no_of_questions)
