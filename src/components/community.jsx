@@ -101,12 +101,12 @@ setarr([])
   
 
   async function Helper(){
-    const result=await axios.get(`${props.url1}`)
+//     const result=await axios.get(`${props.url1}`)
 
-  console.log(result)
+//   console.log(result)
 
 
- if(result){
+//  if(result){
     const res= await axios.get(`${props.url}`);
     
     if(res.data.arr.length===0 || res.data.arr.info===null || res.data.arr===[] ){
@@ -117,7 +117,7 @@ console.log(res)
        setarr(res.data.arr)
        setactivepage(res.data.pagenumber)
        setno_of_questions(res.data.no_of_questions)
- }
+//  }
 
 
 }

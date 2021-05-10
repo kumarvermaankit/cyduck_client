@@ -499,7 +499,7 @@ rect:hover {
     border-right: none;
     border-bottom: none;
     overflow-x:hidden;
-    
+    outline: none;
 }
 
 .searchInput:focus {
