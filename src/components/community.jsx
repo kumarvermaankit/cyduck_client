@@ -108,23 +108,33 @@ setarr([])
 
 //  if(result){
 
-var result;
-    const res= await axios.get(`${props.url}`);
+    var result= await axios.get(`${props.url}`);
 
-    console.log(res);
-    if(res){
-         axios.get(`${props.url1}`)  
-    }
+  var res;
+    
+
+if(result){
+    res=await axios.get(`${props.url1}`)  
+
+}
+ 
+
+console.log(res)
+        
+if(res.data.arr.length===0){
+    setarr([null])
+}
+else{
+    setarr(res.data.arr)
+}
+
+  
 
 
-    if(res.data.arr.length===0 || res.data.arr.info===null || res.data.arr===[] ){
-        window.location.reload()
-    }
 
+setactivepage(res.data.pagenumber)
+setno_of_questions(res.data.no_of_questions)
 
-       setarr(res.data.arr)
-       setactivepage(res.data.pagenumber)
-       setno_of_questions(res.data.no_of_questions)
 //  }
 
 
