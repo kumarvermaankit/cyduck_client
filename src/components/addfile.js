@@ -186,44 +186,57 @@ seti(false)
 
   
 
-function Imageupload(event){
+async function Imageupload(event){
 
 
 var array=[]
 
 event.preventDefault();
 
-files.map((each)=>{
+function help(){
+
+  files.map((each)=>{
 
 
 
-const uploadtask=storage.storage().ref(`images/${each.name}`).put(each)
-uploadtask.on(
-  "state_changed",
-  snapshot=>{},
-    error=>{
-      console.log(error)
-    },
-()=>{
-  storage.storage()
-  .ref("images")
-  .child(each.name)
-  .getDownloadURL()
-  .then(imgurl=>{
+    const uploadtask=storage.storage().ref(`images/${each.name}`).put(each)
+    uploadtask.on(
+      "state_changed",
+      snapshot=>{},
+        error=>{
+          console.log(error)
+        },
+    ()=>{
+      storage.storage()
+      .ref("images")
+      .child(each.name)
+      .getDownloadURL()
+      .then(imgurl=>{
+    
+    
+    array.push(imgurl)
+    
+    files.unshift()
+    
+      })
+    }
+    )
+  
+    })
 
-
-array.push(imgurl)
-
-files.unshift()
-
-  })
+    return true
 }
-)
-})
 
-setFile([])
-setquestionimg(array)
-setimguploadstate(false)
+
+const r=await help();
+
+if(r){
+  setFile([])
+  setquestionimg(array)
+  setimguploadstate(false)
+}
+
+
 }
 
  
