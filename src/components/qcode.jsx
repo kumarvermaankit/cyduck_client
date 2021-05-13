@@ -549,7 +549,7 @@ console.log((((Date.parse(new Date()))-time)/3600000))
 
      
       return (
-          <div className="community_timer">
+          <div className="community_timer2">
             
 
 
@@ -961,14 +961,14 @@ var currenttime=Date.parse(new Date())
         <div key={props.i+"childdiv"} id={props.i+"childdiv"}>
     
  
-{props.doc_name!=="extra"?<div className="divtimer">
+{props.doc_name!=="extra"?<div className="divtimer" >
 <p >Time Remaining:</p>
 {CD?<Countdown time={props.time} d={props.doc_name} idx={props.index} />:<p>0</p>}
 </div>:null}
     
    
  
-    <button style={{paddingTop:"0px",cursor:"pointer",backgroundColor:"transparent",color:"black"}} className="code-secn" onClick={()=>Showcode(props.i)} >
+    <button  className="code-secn" onClick={()=>Showcode(props.i)} >
      Code
      </button>
     
