@@ -380,7 +380,7 @@ return(
 count++
      
 {/* const srr=require(`./Uploads/${each.filename}`) */}
-console.log(each)
+
 
     return(
                     <div >
@@ -1053,9 +1053,9 @@ var currenttime=Date.parse(new Date())
 </div>
 
 
-{statearr?<h3>Answers:</h3>:null}
-
-{answerarr.map(ans=>{
+{statearr?<h3 style={{textDecoration:"underline"}}>Answers</h3>:null}
+{statearr?answerarr.length===0?<p>No answers available</p>:
+answerarr.map(ans=>{
 
   
  
@@ -1092,8 +1092,8 @@ return (
          {vote[ans._id]===undefined?ans.vote?<FavoriteIcon />:<FavoriteBorderIcon />:vote[ans._id]?<FavoriteIcon />:<FavoriteBorderIcon />}
        
          
-          </div>:null:null}
-
+          </div>:null:null
+       }
 
 
 {tkn!==null?<div>
@@ -1113,7 +1113,7 @@ return (
 
     )
    
- })}
+ }):null}
 
 
 
