@@ -24,6 +24,7 @@ function SignIn(props){
     const { userHasAuthenticated } = useAppContext();  
     const [emails,setemails]=useState([])
     const [emailstate,setemailstate]=useState()
+    const [emailval,setemailval]=useState("")
 const [userP,setUserP]=useState({
 email:"",
 
@@ -50,16 +51,18 @@ function OnChange(event,a){
 
 event.preventDefault()
 
-console.log(event.target.value,event.target.value.length)
+
 if(event.target.value !==undefined && event.target.value.length!==0){
 if(a===1){
-    if(emails.includes(event.target.value)===true){
+   
+    if(emails.includes(event.target.value)===true || emails.includes(emailval)===true){
         setemailstate(true)
     }
     else{
         setemailstate(false)
     }
 }
+setemailval(event.target.value)
 }
 const {name,value}=event.target;
 
@@ -75,6 +78,7 @@ return{
 })    
 )
 }
+
 
 
 
@@ -128,7 +132,7 @@ return(
     <p class="header" ><b>LOG IN !</b></p>
   <div >
   <label ><h3 ><b>Email</b></h3></label>
-    <input id="inputelement1" className="signinput" type="email" name="email" value={userP.email} onChange={(event)=>OnChange(event,1)} onFocus={()=>setemailstate(false)} required="true"  />
+    <input id="inputelement1" className="signinput" type="email" name="email" value={userP.email} onChange={(event)=>OnChange(event,1)} onFocus={()=>emailstate?setemailstate(true):setemailstate(false)} required="true"  />
     {console.log(emailstate)}
     {emailstate===true?<p className="checkpara1" >Alright</p>:emailstate===false?<p className="checkpara" >Email doesn't exist</p>:null}
   </div>
