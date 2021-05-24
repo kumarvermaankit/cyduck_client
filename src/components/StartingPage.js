@@ -4,6 +4,13 @@ import {useHistory} from "react-router-dom";
 
 import cyduck from "./cyduck.png"
 
+import TelegramIcon from '@material-ui/icons/Telegram';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+
+
+import TwitterIcon from '@material-ui/icons/Twitter';
+import { FaDiscord } from "react-icons/fa";
+
 function StartingPage(){
 
 
@@ -46,7 +53,7 @@ function gotosign(event){
         <div className="heading"><h1>CYDUCK</h1></div>
         <div className="writer">
             <h2>We ensure easy clarifications</h2>
-            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum laboriosam sunt cupiditatesit amet consectetur adipisicing elit. Harum laboriosam sunt cupiditatesit amet consectetur adipisicing elit. Harum laboriosam sunt cupiditate </h4>
+            <p className="cyduck_desc">Cyduck is a platform which helps various communities of programmers/developers to exchange their doubts/errors with other programmers and faculties who are enthusiastic and dedicated to programming within few steps to obtain desired solution within a limited time frame by providing each other some monitory benefits</p>
             <form action=""  method="get">
             {tkn===null?<a className="strlinks" href="/signin"  >Get Started</a>:null}
            {tkn!==null?<a  className="strlinks" style={{paddingLeft:"13px"}} href="/community">Answer a Question</a>:<a  className="strlinks2" style={{paddingTop:"24px",paddingLeft:"10px"}} href="/community">Answer a Question</a>}
@@ -62,7 +69,7 @@ function gotosign(event){
         <h2>What do we do?</h2>
         <div className="about-content">
             <img   src={cyduck} alt="" />
-        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vitae, consequuntur nisi odit nihil debitis animi sit quisquam ut perspiciatis deleniti unde itaque, eveniet fuga quam doloribus, dignissimos molestiae amet.<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ea quasi ipsam minima eligendi sunt et nemo eaque autem nobis fugit vitae,?</p></h4>
+        <h4>We allow users to post their doubts on our platform using different medium for free or by paying.<p>then other users can answer their question, and redeem the amount paid by the user</p></h4>
         
         </div>
        
@@ -77,7 +84,7 @@ function gotosign(event){
                <div className="icon"><i className="fa fa-inr" aria-hidden="true"></i></div>
                 <div className="content">
                     <h3>Free</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                    <p>You can ask your question for free without any time frame</p>
                     
                 </div>
 
@@ -87,7 +94,7 @@ function gotosign(event){
                <div className="icon"><i className="fa fa-inr" aria-hidden="true"></i></div>
                 <div className="content">
                     <h3> 3 /6hr</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+                    <p>For Rs. 3 you can get answer to your question within 6 hours </p>
                     
                 </div>
 
@@ -97,7 +104,7 @@ function gotosign(event){
                 
                 <div className="content">
                     <h3> 5 /3hr</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+                    <p>For Rs. 5 you can get answer to your question within 3 hours</p>
                     
                 </div>
             </div>
@@ -105,7 +112,7 @@ function gotosign(event){
                
                 <div className="content">
                     <h3> 10 /1hr</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+                    <p>For Rs. 10 you can get answer to your question within 1 hour</p>
                     
                 </div>
             </div>
@@ -120,10 +127,10 @@ function gotosign(event){
             <div className="footer-basic">
                 <footer>
                     <div className="social">
-                        <a href="#"><i className="icon ion-social-instagram"></i></a>
-                        <a href="#"><i className="icon ion-social-youtube-outline"></i></a>
-                        <a href="#"><i className="icon ion-social-twitter"></i></a>
-                        <a href="#"><i className="icon ion-social-facebook"></i></a>
+                        <a href="https://t.me/joinchat/xrbUyk1degk5OTll" target="_blank"><i className="icon ion-social-instagram" ><TelegramIcon /></i></a>
+                        <a href="https://www.linkedin.com/company/cyduck/" target="_blank"><i className="icon ion-social-youtube-outline" ><LinkedInIcon /></i></a>
+                        <a ><i className="icon ion-social-twitter" ></i><TwitterIcon /></a>
+                        <a href="#" href="https://discord.gg/XJNPaF4b" target="_blank"><FaDiscord /></a>
                     </div>
     
                     <ul className="list-inline">
@@ -131,7 +138,7 @@ function gotosign(event){
                         
                         
                     </ul>
-                    <p className="copyright">Company Name © 2021</p>
+                    <p className="copyright">Company Name  Cyduck © 2021</p>
                 </footer>
             </div>
             
